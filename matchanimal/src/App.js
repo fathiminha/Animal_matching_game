@@ -1,10 +1,21 @@
 import './App.css';
-import Animal from './components/Animal';
+import {useState, useEffect} from 'react';
+import AnimalName from './components/AnimalName';
+import SelectAnimal from './components/SelectAnimal';
+import {animals} from './data/animalDb'
 
 function App() {
+  const [displayedAnimal, setDisplayedani] = useState("");
+
+  useEffect(()=>{
+    const randomIndex = Math.floor(Math.random() * animals.length);
+    setDisplayedani(animals[randomIndex].name)
+  }, []);
+
   return (
     <div className="App">
-       <Animal />
+       <AnimalName name={displayedAnimal} />
+       <SelectAnimal />
     </div>
   );
 }
