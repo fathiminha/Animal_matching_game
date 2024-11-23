@@ -1,8 +1,8 @@
 export default function({result}){
     return(
         <div>
-            {result === 'win' && <h2> Congratulations! You win </h2>}
-            {result === 'lose' && <h2> You lose! try again. </h2>}
+            {result === 'win' && <h2> Win </h2>}
+            {result === 'lose' && <h2> Loose </h2>}
         </div>
     )
 }
